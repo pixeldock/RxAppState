@@ -84,8 +84,8 @@ extension RxSwift.Reactive where Base: UIApplication {
      
      For more information take a look at `DelegateProxyType` protocol documentation.
      */
-    public var delegate: DelegateProxy {
-        return RxApplicationDelegateProxy.proxyForObject(base)
+    var delegate: RxApplicationDelegateProxy {
+        return RxApplicationDelegateProxy.proxy(for: base)
     }
     
     /**

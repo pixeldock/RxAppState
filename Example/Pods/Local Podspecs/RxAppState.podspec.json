@@ -1,6 +1,6 @@
 {
   "name": "RxAppState",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "summary": "Handy RxSwift extensions to observe your app's state.",
   "description": "Transform the state of your App into RxSwift Observables. Including convenience Observables for common scenarios.",
   "homepage": "https://github.com/pixeldock/RxAppState",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/pixeldock/RxAppState.git",
-    "tag": "0.3.4"
+    "tag": "0.3.5"
   },
   "social_media_url": "https://twitter.com/pixeldock",
   "platforms": {
@@ -21,10 +21,10 @@
   "frameworks": "Foundation",
   "dependencies": {
     "RxSwift": [
-      "~> 3.4"
+      "~> 4.0"
     ],
     "RxCocoa": [
-      "~> 3.4"
+      "~> 4.0"
     ]
   }
 }
