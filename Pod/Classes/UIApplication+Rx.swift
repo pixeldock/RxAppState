@@ -322,24 +322,24 @@ fileprivate struct _SharedRxAppState {
         userDefaults.set(currentAppVersion, forKey: DefaultName.currentAppVersion)
     }
     
-    lazy var didOpenAppCount: Observable<Int> = rx.didOpenApp
+    lazy var didOpenAppCount: Observable<Int> = self.rx.didOpenApp
         .map { _ in
             return UserDefaults.standard.integer(forKey: DefaultName.didOpenAppCount)
         }
         .share(replay: 1, scope: .forever)
     
-    lazy var isFirstLaunch: Observable<Bool> = rx.didOpenApp
+    lazy var isFirstLaunch: Observable<Bool> = self.rx.didOpenApp
         .map { _ in
             let didOpenAppCount = UserDefaults.standard.integer(forKey: DefaultName.didOpenAppCount)
             return didOpenAppCount == 1
         }
         .share(replay: 1, scope: .forever)
     
-    lazy var firstLaunchOnly: Observable<Void> = rx.isFirstLaunch
+    lazy var firstLaunchOnly: Observable<Void> = self.rx.isFirstLaunch
         .filter { $0 }
         .map { _ in return }
     
-    lazy var appVersion: Observable<AppVersion> = rx.didOpenApp
+    lazy var appVersion: Observable<AppVersion> = self.rx.didOpenApp
         .map { _ in
             let userDefaults = UserDefaults.standard
             let currentVersion: String = userDefaults.string(forKey: DefaultName.currentAppVersion) ?? RxAppState.currentAppVersion ?? ""
@@ -348,12 +348,12 @@ fileprivate struct _SharedRxAppState {
         }
         .share(replay: 1, scope: .forever)
     
-    lazy var isFirstLaunchOfNewVersion: Observable<Bool> = appVersion
+    lazy var isFirstLaunchOfNewVersion: Observable<Bool> = self.appVersion
         .map { version in
             return version.previous != version.current
         }
     
-    lazy var firstLaunchOfNewVersionOnly: Observable<AppVersion> = appVersion
+    lazy var firstLaunchOfNewVersionOnly: Observable<AppVersion> = self.appVersion
         .filter { $0.previous != $0.current }
 }
 
