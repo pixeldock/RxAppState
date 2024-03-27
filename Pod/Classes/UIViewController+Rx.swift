@@ -91,3 +91,17 @@ extension RxSwift.Reactive where Base: UIViewController {
             .merge()
     }
 }
+
+#if swift(<5.9)
+// this is a workaround to make `viewIsAppearing` work on Xcode 14
+// found here: https://liamnichols.eu/2023/06/12/view-is-appearing.html
+// use at own risk
+extension UIViewController {
+    @objc
+    @available(iOS, introduced: 13.0)
+    @available(tvOS, introduced: 13.0)
+    func viewIsAppearing(_ animated: Bool) {
+        assertionFailure("The UIKit implementation was not called as expected")
+    }
+}
+#endif
