@@ -1,6 +1,6 @@
 {
   "name": "RxAppState",
-  "version": "1.7.3",
+  "version": "1.8.1",
   "swift_versions": [
     "5.0"
   ],
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/pixeldock/RxAppState.git",
-    "tag": "1.7.3"
+    "tag": "1.8.1"
   },
   "platforms": {
     "ios": "13.0",
