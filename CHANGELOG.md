@@ -1,8 +1,14 @@
 Changelog
 =========
-1.7.3
+1.8.1
+-----
+- fix platform version in package file (thanks to [greatsk55](https://github.com/greatsk55) for this contribution!)
+
+1.8.0
 -----
 - add privacy info for user defaults usage (thanks to [Alexander Vogel](https://github.com/netrager) for suggesting this)
+- bump iOS deployment target to 13.0
+- bump minumum Xcode version to 15.0
 
 1.7.2
 -----
