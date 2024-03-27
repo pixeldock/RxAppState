@@ -143,7 +143,7 @@ There is a simple example project to demonstrate how to use RxAppDelegate.
 
 ## Requirements
 iOS 13   
-Swift 5.3
+Swift 5.2
 Xcode 15 
 If you are still on Xcode 14 you can try to use the branch `/fix/xcode14-viewIsAppearing' (at own risk)
 
